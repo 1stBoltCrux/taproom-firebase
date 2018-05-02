@@ -4,3 +4,7 @@ img {
 .card {
   max-width: 310px;
 }
+.kegList {
+  display: flex;
+  flex-wrap: wrap;
+}

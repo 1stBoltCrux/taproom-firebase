@@ -1,12 +1,14 @@
-<div class="card" *ngFor="let keg of childKegList">
-  <img class='card-img-top' src={{keg.image}}>
-  <div class="card-body">
-    <h5 class="card-title">{{keg.name}}</h5>
-    <p>A fresh new beer by {{keg.brand}}!</p>
+<div class="container kegList">
+  <div class="card" *ngFor="let keg of childKegList">
+    <img class='card-img-top' src={{keg.image}}>
+    <div class="card-body">
+      <h5 class="card-title">{{keg.name}}</h5>
+      <p>A fresh new beer by {{keg.brand}}!</p>
+    </div>
+    <ul class ="list-group list-group-flush">
+      <li class="list-group-item">Price: ${{keg.price}}</li>
+      <li class="list-group-item"> Alcohol by Volume: {{keg.abv}}</li>
+      <li class="list-group-item">Only {{keg.pintCount}} pints remaining!</li>
+    </ul>
   </div>
-  <ul class ="list-group list-group-flush">
-    <li class="list-group-item">Price: ${{keg.price}}</li>
-    <li class="list-group-item"> Alcohol by Volume: {{keg.abv}}</li>
-    <li class="list-group-item">Only {{keg.pintCount}} pints remaining!</li>
-  </ul>
 </div>
