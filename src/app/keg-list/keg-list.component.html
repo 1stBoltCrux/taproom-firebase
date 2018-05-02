@@ -1,14 +1,15 @@
 <div class="container kegList">
-  <div class="card" *ngFor="let keg of childKegList">
-    <img class='card-img-top' src={{keg.image}}>
+  <div class="card" *ngFor="let clickedKeg of childKegList">
+    <img class='card-img-top' src={{clickedKeg.image}}>
     <div class="card-body">
-      <h5 class="card-title">{{keg.name}}</h5>
-      <p>A fresh new beer by {{keg.brand}}!</p>
+      <h5 class="card-title">{{clickedKeg.name}}</h5>
+      <p>A fresh new beer by {{clickedKeg.brand}}!</p>
     </div>
     <ul class ="list-group list-group-flush">
-      <li class="list-group-item">Price: ${{keg.price}}</li>
-      <li class="list-group-item"> Alcohol by Volume: {{keg.abv}}</li>
-      <li class="list-group-item">Only {{keg.pintCount}} pints remaining!</li>
+      <li class="list-group-item">Price: ${{clickedKeg.price}}</li>
+      <li class="list-group-item"> Alcohol by Volume: {{clickedKeg.abv}}</li>
+      <li class="list-group-item">Only {{clickedKeg.pintCount}} pints remaining!</li>
     </ul>
+    <button (click)="editButtonClicked(clickedKeg)" class="btn btn-danger" name="button">Edit</button>
   </div>
 </div>

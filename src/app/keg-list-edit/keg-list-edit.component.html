@@ -1,0 +1,21 @@
+<div *ngIf="childSelectedKeg">
+  <div class="container kegList">
+    <div class="card">
+      <img class='card-img-top' src={{childSelectedKeg.image}}>
+      <div class="card-body">
+        <h5 class="card-title">Edit {{childSelectedKeg.name}}:</h5>
+        <input [(ngModel)]="childSelectedKeg.name">
+        <input [(ngModel)]="childSelectedKeg.brand">
+      </div>
+      <ul class ="list-group list-group-flush">
+        <li class="list-group-item">Price: ${{childSelectedKeg.price}}</li>
+        <input [(ngModel)]="childSelectedKeg.price">
+        <li class="list-group-item"> Alcohol by Volume: {{childSelectedKeg.abv}}</li>
+        <input [(ngModel)]="childSelectedKeg.abv">
+        <li class="list-group-item">Only {{childSelectedKeg.pintCount}} pints remaining!</li>
+        <input [(ngModel)]="childSelectedKeg.pintCount">
+      </ul>
+      <button (click)="finishedEditing()" class="btn btn-danger">Done</button>
+    </div>
+  </div>
+</div>
