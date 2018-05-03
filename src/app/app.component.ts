@@ -17,14 +17,25 @@ export class AppComponent {
     new Keg('Oatmeal Pale Ale', 'Burnside Brewing', 6, 5.6, 124, "../assets/burnsidebrewing.jpg")
   ];
   childSelectedKeg = null;
+  addKegisClicked = null;
+
+  showAddKeg(){
+    this.addKegisClicked = "showKeg";
+  }
 
 
   editKeg(clickedKeg){
     this.childSelectedKeg = clickedKeg;
-    console.log(this.childSelectedKeg);
   }
 
   finishedEditing() {
   this.childSelectedKeg = null;
 }
+  addKeg(newKeg: Keg) {
+    this.masterKegList.push(newKeg);
+  }
+
+  finishAddingKeg(){
+    this.addKegisClicked = null;
+  }
 }

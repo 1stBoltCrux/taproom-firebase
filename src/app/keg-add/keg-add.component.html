@@ -1,0 +1,23 @@
+<button (click)="showAddKeg()" class="btn btn-danger">Add a New Keg</button>
+<div *ngIf="addKegisClicked">
+  <div class="container kegList">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Enter Keg Information:</h5>
+        <input #newName placeholder="Keg Name">
+        <input #newBrand placeholder="Keg Brand">
+      </div>
+      <ul class ="list-group list-group-flush">
+        <li class="list-group-item">Price per pint:</li>
+        <input placeholder="Price per Pint" #newPrice>
+        <li class="list-group-item">Alcohol by Volume:</li>
+        <input placeholder="Alcohol by Volume" #newAbv>
+        <li class="list-group-item">Pints Remaining (124 if Keg is new)</li>
+        <input placeholder="Pints in Keg" #newPintCount>
+        <li class="list-group-item">Insert Image Source</li>
+        <input placeholder="Image Source" #newImage>
+      </ul>
+      <button (click)="submitKeg(newName.value, newBrand.value, newPrice.value, newAbv.value, newPintCount.value, newImage.value); newName.value=''; newBrand.value=''; newAbv.value=''; newPintCount.value=''; newImage.value=''; finishAddingKeg();" class="btn btn-danger">Finish Adding Keg</button>
+    </div>
+  </div>
+</div>
