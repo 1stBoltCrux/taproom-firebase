@@ -4,5 +4,5 @@
   <p>Welcome! Take a look below and get to drinkin'!</p>
 </div>
 <keg-add (addKeg)="showAddKeg()" [addKegisClicked] = "addKegisClicked" (sendKeg)="addKeg($event)" (finishKeg)="finishAddingKeg()"></keg-add>
-  <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
+  <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (pintClickSender)="sellPint($event)"></keg-list>
   <keg-list-edit [childSelectedKeg]="childSelectedKeg" (clickedDone)="finishedEditing()"></keg-list-edit>

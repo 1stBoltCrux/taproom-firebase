@@ -1,15 +1,20 @@
-<div class="container kegList">
-  <div class="card" *ngFor="let clickedKeg of childKegList">
-    <img class='card-img-top' src={{clickedKeg.image}}>
-    <div class="card-body">
-      <h5 class="card-title">{{clickedKeg.name}}</h5>
-      <p>A fresh new beer by {{clickedKeg.brand}}!</p>
-    </div>
-    <ul class ="list-group list-group-flush">
-      <li class="list-group-item">Price: ${{clickedKeg.price}}</li>
-      <li class="list-group-item"> Alcohol by Volume: {{clickedKeg.abv}}</li>
-      <li class="list-group-item">Only {{clickedKeg.pintCount}} pints remaining!</li>
-    </ul>
-    <button (click)="editButtonClicked(clickedKeg)" class="btn btn-danger" name="button">Edit</button>
+
+  <div class="container kegList">
+      <div class="card" *ngFor="let clickedKeg of childKegList">
+        <img class='card-img-top' src={{clickedKeg.image}}>
+        <div class="card-body">
+          <h5 class="card-title">{{clickedKeg.name}}</h5>
+          <p>A fresh new beer by {{clickedKeg.brand}}!</p>
+        </div>
+        <ul class ="list-group list-group-flush">
+          <li [class]="priceColor(clickedKeg)">Price: ${{clickedKeg.price}}</li>
+          <li [class]=abvStyles(clickedKeg)> Alcohol by Volume: {{clickedKeg.abv}}</li>
+          <div *ngIf="clickedKeg.pintCount <= 10" class="bg-danger">
+            <h5>Keg Low</h5>
+          </div>
+          <li class="list-group-item">Only {{clickedKeg.pintCount}} pints remaining!</li>
+          <button (click)="sellPint(clickedKeg)" class="btn btn-success">Sell a Pint</button>
+        </ul>
+        <button (click)="editButtonClicked(clickedKeg)" class="btn btn-danger" name="button">Edit</button>
+      </div>
   </div>
-</div>

@@ -1,0 +1,24 @@
+.red {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.lightRed{
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.faintRed{
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+
+.drunk {
+  border: 7px solid green;
+}
+
+.classy {
+  border: 7px solid blue;
+}
+.pussy{
+  border: 7px solid pink;
+  font-family: cursive;
+}
